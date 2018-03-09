@@ -2,13 +2,16 @@
 *
 * CSCI 305 - ML Programming Lab
 *
-* <firstname> <lastname>
-* <email-address>
+* Amelia Getty
+* gettyamelia@gmail.com
 *
 ***************************************************************)
 
-(* Define your data type and functions here *)
 
+(* Define your data type and functions here *)
+datatype set = 
+
+(* the following functions won't work until I've defined the sets data type and with the corresponding Set and Empty constructors*)
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
   | stringifyCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ stringifyCharSet(ys);
@@ -30,6 +33,7 @@ fun print_str x = print ("{ " ^ stringifyStringSet(x) ^ "}\n");
 (* Simple function that prints a set of characters *)
 fun print_chr x = print ("{ " ^ stringifyCharSet(x) ^ "}\n");
 
+(* won't work until after I define the list2Set function*)
 list2Set [1, 3, 2];
 list2Set [#"a", #"b", #"c"];
 list2Set [];

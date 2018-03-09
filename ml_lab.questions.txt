@@ -1,15 +1,15 @@
-<firstname> <lastname>
+Amelia Getty
 CSCI 305
 Spring 2018
 Lab Questions
 =======================
-1.
+1.	val it = [4,2,5,2,6,10] : int list
 
-2.
+2.	The function f adds 1 to each member of the list.
 
-3.
+3.	The line `fun f [] = []` defines the function f with the keyword "fun" to have an input of type list as well as the output type list.
 
-4.
+4.	The line `| f (x::xs) = (x + 1) :: (f xs)` specifies a function body for f, which takes in x and xs and puts x + 1 into the list xs.
 
 5.
 
