@@ -7,19 +7,27 @@ Lab Questions
 
 2.	The function f adds 1 to each member of the list.
 
-3.	The line `fun f [] = []` defines the function f with the keyword "fun" to have an input of type list as well as the output type list.
+3.	The line `fun f [] = []` defines the function f with the keyword "fun" to
+    have an input of type list as well as the output type list.
 
-4.	The line `| f (x::xs) = (x + 1) :: (f xs)` specifies a function body for f, which takes in x and xs and puts x + 1 into the list xs.
+4.	The line `| f (x::xs) = (x + 1) :: (f xs)` specifies a function body for
+    f, which takes in x and xs and puts x + 1 into the list xs.
 
-5.
+5.  false
 
-6.
+6.  Tail recursion
 
-7.
+7.  val it = () : unit
+    { it was the best of times, it was the worst of times }
 
-8.
+8.  Tail recursion is a recursive call that is performed as the final action of
+    a procedure. It can be beneficial to write tail recursing functions because
+    tail calls can be implemented without adding a new stack frame to the stack,
+    called tail call elimination. This allows for efficient structured
+    programming.
+    (Wikipedia (7 Mar. 2018) "Tail Call" https://en.wikipedia.org/wiki/Tail_call)
 
-9.
+9.  
 
 10.
 

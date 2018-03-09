@@ -12,9 +12,16 @@ fun f [] = [] (* a *)
   | f (x::xs) = (x + 1) :: (f xs); (* b *)
 
 (* Define your data type and functions here *)
-(* Set datatype - holds polymorphic type 'element and sets of 'element *)
 datatype 'element set =
   Empty | Set of 'element * 'element set;
+
+fun isMember (e, Set(element, aSet)) =
+  if e = element then true
+  else if aSet = Empty then false
+  else isMember(e, aSet);
+
+fun list2Set [] = Empty
+  | list2Set (head::tail) = Set(head, list2Set(tail));
 
 (* the following functions won't work until I've defined the sets data type and with the corresponding Set and Empty constructors*)
 (* Simple function to stringify the contents of a Set of characters *)
@@ -46,10 +53,11 @@ list2Set [6, 2, 2];
 list2Set ["x", "y", "z", "x"];
 
 (* Question 1 *)
-f [3, 1, 4, 1, 5, 9]
+f [3, 1, 4, 1, 5, 9]; (* this needed a semicolon; added. *)
 
 (* Question 5 *)
-val quest5 = isMember "one" (list2Set ["1", "2", "3", "4"]);
+(* this didn't work without an extra set of parenthases *)
+val quest5 = isMember("one", (list2Set["1", "2", "3", "4"]));
 print ("\nQuestion 5: " ^ Bool.toString(quest5) ^ "\n");
 
 (* Question 7 *)
