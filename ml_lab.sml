@@ -7,9 +7,14 @@
 *
 ***************************************************************)
 
+(* warmup *)
+fun f [] = [] (* a *)
+  | f (x::xs) = (x + 1) :: (f xs); (* b *)
 
 (* Define your data type and functions here *)
-datatype set = 
+(* Set datatype - holds polymorphic type 'element and sets of 'element *)
+datatype 'element set =
+  Empty | Set of 'element * 'element set;
 
 (* the following functions won't work until I've defined the sets data type and with the corresponding Set and Empty constructors*)
 (* Simple function to stringify the contents of a Set of characters *)
