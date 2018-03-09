@@ -7,23 +7,28 @@
 *
 ***************************************************************)
 
-(* warmup *)
-fun f [] = [] (* a *)
-  | f (x::xs) = (x + 1) :: (f xs); (* b *)
-
 (* Define your data type and functions here *)
+
+(* "warmup" function *)
+fun f [] = [] (* a - defines function f of input and output type of list*)
+  | f (x::xs) = (x + 1) :: (f xs); (* b - adds 1 to the element x of the list
+                                      and inserts it into the list xs*)
+
+(****** SETS DATATYPE ******)
+(* constructed set datatype; can hold polymorphic type 'element and sets of 'element *)
 datatype 'element set =
   Empty | Set of 'element * 'element set;
 
+(* determines if an element e is part of the set, aSet. Returns true if e is a member. *)
 fun isMember (e, Set(element, aSet)) =
   if e = element then true
   else if aSet = Empty then false
   else isMember(e, aSet);
 
+(* converts a list into a set, not allowing duplicates *)
 fun list2Set [] = Empty
   | list2Set (head::tail) = Set(head, list2Set(tail));
 
-(* the following functions won't work until I've defined the sets data type and with the corresponding Set and Empty constructors*)
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
   | stringifyCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ stringifyCharSet(ys);
@@ -45,7 +50,6 @@ fun print_str x = print ("{ " ^ stringifyStringSet(x) ^ "}\n");
 (* Simple function that prints a set of characters *)
 fun print_chr x = print ("{ " ^ stringifyCharSet(x) ^ "}\n");
 
-(* won't work until after I define the list2Set function*)
 list2Set [1, 3, 2];
 list2Set [#"a", #"b", #"c"];
 list2Set [];
