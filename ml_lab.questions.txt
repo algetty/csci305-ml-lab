@@ -17,8 +17,7 @@ Lab Questions
 
 6.  Tail recursion
 
-7.  val it = () : unit
-    { it was the best of times, it was the worst of times }
+7.  { best times, it was the worst of times }
 
 8.  Tail recursion is a recursive call that is performed as the final action of
     a procedure. It can be beneficial to write tail recursing functions because
@@ -27,11 +26,9 @@ Lab Questions
     programming.
     (Wikipedia (7 Mar. 2018) "Tail Call" https://en.wikipedia.org/wiki/Tail_call)
 
-9.  val it = () : unit
-    { green eggs and ham }
+9.  { green eggs and ham }
 
-10. val it = () : unit
-    { and macaroni }
+10. { and macaroni }
 
 11. I like that ML can be brief... if you can do it right
 

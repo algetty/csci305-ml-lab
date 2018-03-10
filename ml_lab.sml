@@ -25,10 +25,14 @@ fun isMember e Empty = false
   if e = element then true
   else isMember e aSet;
 
-  (* converts a list into a set, not allowing duplicates *)
+(* converts a list into a set, not allowing duplicates *)
   fun list2Set [] = Empty
-    | list2Set (x::xs) =
-    Set(x, list2Set(xs));
+    | list2Set (element::tail) =
+    let val a = list2Set tail
+    in if isMember element a
+    then a
+    else Set(element, a)
+    end;
 
 (* UNION *)
 (* takes the set union of set1 and set 2 and returns a set representing the
@@ -62,7 +66,7 @@ fun intersect (Set(element, set1)) set2 =
 
 
 
-
+(****************************** v given code v ********************************)
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
   | stringifyCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ stringifyCharSet(ys);
