@@ -60,7 +60,7 @@ list2Set ["x", "y", "z", "x"];
 f [3, 1, 4, 1, 5, 9]; (* this needed a semicolon; added. *)
 
 (* Question 5 *)
-(* this didn't work without an extra set of parenthases *)
+(* this didn't work without an extra set of parenthases and a comma *)
 val quest5 = isMember("one", (list2Set["1", "2", "3", "4"]));
 print ("\nQuestion 5: " ^ Bool.toString(quest5) ^ "\n");
 
@@ -70,10 +70,11 @@ print "\nQuestion 7: ";
 print_str quest7;
 print "\n";
 
+(* questions 9 and 10 also needed extra parenthases and commas to work with my functions *)
 (* Question 9 *)
 print "\nQuestion 9: ";
-print_str (union (list2Set ["green", "eggs", "and"]) (list2Set ["ham"]));
+print_str (union ((list2Set ["green", "eggs", "and"]), (list2Set ["ham"])));
 
 (* Question 10 *)
 print "\nQuestion 10: ";
-print_str (intersect (list2Set ["stewed", "tomatoes", "and", "macaroni"]) (list2Set ["macaroni", "and", "cheese"]));
+print_str (intersect ((list2Set ["stewed", "tomatoes", "and", "macaroni"]), (list2Set ["macaroni", "and", "cheese"])));
