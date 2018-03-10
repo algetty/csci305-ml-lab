@@ -1,0 +1,50 @@
+Amelia Getty
+CSCI 305
+Spring 2018
+Lab Questions
+=======================
+1.	val it = [4,2,5,2,6,10] : int list
+
+2.	The function f adds 1 to each member of the list.
+
+3.	The line `fun f [] = []` defines the function f with the keyword "fun" to
+    have an input of type list as well as the output type list.
+
+4.	The line `| f (x::xs) = (x + 1) :: (f xs)` specifies a function body for
+    f, which takes in x and xs and puts x + 1 into the list xs.
+
+5.  false
+
+6.  Tail recursion
+
+7.  { best times, it was the worst of times }
+
+8.  Tail recursion is a recursive call that is performed as the final action of
+    a procedure. It can be beneficial to write tail recursing functions because
+    tail calls can be implemented without adding a new stack frame to the stack,
+    called tail call elimination. This allows for efficient structured
+    programming.
+    (Wikipedia (7 Mar. 2018) "Tail Call" https://en.wikipedia.org/wiki/Tail_call)
+
+9.  { green eggs and ham }
+
+10. { and macaroni }
+
+11. I like that ML can be brief... if you can do it right
+
+12. Honestly I'm still not very used to ML and I find it really confusing and
+    not as straightforward as other languages I've used (Python, C, C++, Java,
+    Ruby). I can't name anything more specific than the syntax doesn't make that
+    much sense to me.
+
+13. I didn't really enjoy the lab much... not a fan of ML. Besides the whole
+    thing being in ML, sets are a good thing to program, I think, especially
+    with a new language like this, since they're something we know how to work
+    with, but not necessarily the most interesting. At least it's not baseball...
+    My first time programming the professor made us do a program about baseball
+    for literally every lab and I never want to write a baseball program again.
+
+14. I spent Approximately 8 hours on this lab.
+
+15. I probably won't use ML again if I can help it. I'm not exactly sure what
+    types of projects would be best suited for ML, either.
