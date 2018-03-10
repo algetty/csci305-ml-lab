@@ -25,6 +25,21 @@ fun isMember (e, Set(element, aSet)) =
   else if aSet = Empty then false
   else isMember(e, aSet);
 
+(* UNION *)
+(* takes the set union of set1 and set 2 and returns a set representing the
+   mathematical union of two sets.*)
+fun union (Set(element, set1), set2) =
+  (* don't add elements to the union set if they are already in it *)
+  if isMember(element, set2)
+  then union(set1, set2)
+  (* check for elements to add from set1 that still need adding; if empty, there are no more elements to add. *)
+  else if set1 = Empty
+  then Set(element, set2)
+  (* add element from set1 to the union set and recurse*)
+  else Set(element, union(set1, set2));
+
+
+
 (* converts a list into a set, not allowing duplicates *)
 fun list2Set [] = Empty
   | list2Set (head::tail) = Set(head, list2Set(tail));
