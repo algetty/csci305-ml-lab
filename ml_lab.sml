@@ -20,10 +20,11 @@ datatype 'element set = Empty
   | Set of 'element * 'element set;
 
 (* determines if an element e is part of the set, aSet. Returns true if e is a member. *)
-fun isMember (e, Set(element, aSet)) =
+fun isMember e Empty = false
+  | isMember e (Set(element, aSet)) =
   if e = element then true
-  else if aSet = Empty then false
-  else isMember(e, aSet);
+  (* else if aSet = Empty then false *)
+  else isMember e aSet;
 
   (* converts a list into a set, not allowing duplicates *)
   fun list2Set [] = Empty
@@ -35,7 +36,7 @@ fun isMember (e, Set(element, aSet)) =
    mathematical union of two sets.*)
 fun union (Set(element, set1), set2) =
   (* don't add elements to the union set if they are already in it *)
-  if isMember(element, set2)
+  if isMember element set2
   then union(set1, set2)
   (* check for elements to add from set1 that still need adding; if empty, there
      are no more elements to add. *)
@@ -50,13 +51,13 @@ fun union (Set(element, set1), set2) =
 fun intersect (Set(element, set1), set2) =
   (* checks to see if set1 is not empty and if the element from set1 is also in
      set2, and if yes then add to intersection set *)
-  if set1 = Empty andalso isMember(element, set2)
+  if set1 = Empty andalso isMember element set2
   then Set(element, Empty)
   (* if end of set1 reached, don't add more to intersection set *)
   else if set1 = Empty
   then Empty
   (* if element is in both sets, add to intersection set *)
-  else if isMember(element, set2)
+  else if isMember element set2
   then Set(element, intersect(set1, set2))
   else intersect(set1, set2);
 
@@ -95,7 +96,7 @@ f [3, 1, 4, 1, 5, 9]; (* this needed a semicolon; added. *)
 
 (* Question 5 *)
 (* this didn't work without an extra set of parenthases and a comma *)
-val quest5 = isMember("one", (list2Set["1", "2", "3", "4"]));
+val quest5 = isMember "one" (list2Set["1", "2", "3", "4"]);
 print ("\nQuestion 5: " ^ Bool.toString(quest5) ^ "\n");
 
 (* Question 7 *)
@@ -103,7 +104,7 @@ val quest7 = list2Set ["it", "was", "the", "best", "of", "times,", "it", "was", 
 print "\nQuestion 7: ";
 print_str quest7;
 print "\n";
-
+(*
 (* questions 9 and 10 also needed extra parenthases and commas to work with my functions *)
 (* Question 9 *)
 print "\nQuestion 9: ";
@@ -111,4 +112,4 @@ print_str (union ((list2Set ["green", "eggs", "and"]), (list2Set ["ham"])));
 
 (* Question 10 *)
 print "\nQuestion 10: ";
-print_str (intersect ((list2Set ["stewed", "tomatoes", "and", "macaroni"]), (list2Set ["macaroni", "and", "cheese"])));
+print_str (intersect ((list2Set ["stewed", "tomatoes", "and", "macaroni"]), (list2Set ["macaroni", "and", "cheese"]))); *)
