@@ -32,12 +32,28 @@ fun union (Set(element, set1), set2) =
   (* don't add elements to the union set if they are already in it *)
   if isMember(element, set2)
   then union(set1, set2)
-  (* check for elements to add from set1 that still need adding; if empty, there are no more elements to add. *)
+  (* check for elements to add from set1 that still need adding; if empty, there
+     are no more elements to add. *)
   else if set1 = Empty
   then Set(element, set2)
   (* add element from set1 to the union set and recurse*)
   else Set(element, union(set1, set2));
 
+(* INTERSECT *)
+(* takes the intersection of set1 and set2 and returns the set representing the
+  mathematical intersection of the two sets *)
+fun intersect (Set(element, set1), set2) =
+  (* checks to see if set1 is not empty and if the element from set1 is also in
+     set2, and if yes then add to intersection set *)
+  if set1 = Empty andalso isMember(element, set2)
+  then Set(element, Empty)
+  (* if end of set1 reached, don't add more to intersection set *)
+  else if set1 = Empty
+  then Empty
+  (* if element is in both sets, add to intersection set *)
+  else if isMember(element, set2)
+  then Set(element, intersect(set1, set2))
+  else intersect(set1, set2);
 
 
 (* converts a list into a set, not allowing duplicates *)
