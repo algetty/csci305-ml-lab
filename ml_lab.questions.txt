@@ -27,16 +27,27 @@ Lab Questions
     programming.
     (Wikipedia (7 Mar. 2018) "Tail Call" https://en.wikipedia.org/wiki/Tail_call)
 
-9.  
+9.  val it = () : unit
+    { green eggs and ham }
 
-10.
+10. val it = () : unit
+    { and macaroni }
 
-11.
+11. I like that ML can be brief... if you can do it right
 
-12.
+12. Honestly I'm still not very used to ML and I find it really confusing and
+    not as straightforward as other languages I've used (Python, C, C++, Java,
+    Ruby). I can't name anything more specific than the syntax doesn't make that
+    much sense to me.
 
-13.
+13. I didn't really enjoy the lab much... not a fan of ML. Besides the whole
+    thing being in ML, sets are a good thing to program, I think, especially
+    with a new language like this, since they're something we know how to work
+    with, but not necessarily the most interesting. At least it's not baseball...
+    My first time programming the professor made us do a program about baseball
+    for literally every lab and I never want to write a baseball program again.
 
-14.
+14. I spent Approximately 8 hours on this lab.
 
-15.
+15. I probably won't use ML again if I can help it. I'm not exactly sure what
+    types of projects would be best suited for ML, either.
