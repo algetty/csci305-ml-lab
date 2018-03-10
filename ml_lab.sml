@@ -16,14 +16,19 @@ fun f [] = [] (* a - defines function f of input and output type of list*)
 
 (****** SETS DATATYPE ******)
 (* constructed set datatype; can hold polymorphic type 'element and sets of 'element *)
-datatype 'element set =
-  Empty | Set of 'element * 'element set;
+datatype 'element set = Empty
+  | Set of 'element * 'element set;
 
 (* determines if an element e is part of the set, aSet. Returns true if e is a member. *)
 fun isMember (e, Set(element, aSet)) =
   if e = element then true
   else if aSet = Empty then false
   else isMember(e, aSet);
+
+  (* converts a list into a set, not allowing duplicates *)
+  fun list2Set [] = Empty
+    | list2Set (x::xs) =
+    Set(x, list2Set(xs));
 
 (* UNION *)
 (* takes the set union of set1 and set 2 and returns a set representing the
@@ -56,9 +61,7 @@ fun intersect (Set(element, set1), set2) =
   else intersect(set1, set2);
 
 
-(* converts a list into a set, not allowing duplicates *)
-fun list2Set [] = Empty
-  | list2Set (head::tail) = Set(head, list2Set(tail));
+
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
